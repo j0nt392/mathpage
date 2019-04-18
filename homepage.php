@@ -177,8 +177,7 @@ left: 1400px;
 body
 {
   background-image: url(images/Untitled-1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+
 }
 @font-face {
    font-family: myFirstFonts;
@@ -307,6 +306,12 @@ body
   <p>"Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut<br> labore et dolore magna aliqua.<br> Ut enim ad minim veniam, quis nostrud <br>exercitation ullamco laboris nisi ut <br>aliquip ex ea commodo consequat. Duis aute irure dolor<br> in reprehenderit in voluptate velit esse <br>cillum dolore eu fugiat nulla pariatur. Excepteur <br>sint occaecat cupidatat non <br>proident, sunt in culpa qui officia deserunt <br>mollit anim id est laborum."</p><br>
   <p>"Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut<br> labore et dolore magna aliqua.<br> Ut enim ad minim veniam, quis nostrud <br>exercitation ullamco laboris nisi ut <br>aliquip ex ea commodo consequat. Duis aute irure dolor<br> in reprehenderit in voluptate velit esse <br>cillum dolore eu fugiat nulla pariatur. Excepteur <br>sint occaecat cupidatat non <br>proident, sunt in culpa qui officia deserunt <br>mollit anim id est laborum."</p>
 </div> -->
+<?php
+$mysql_pointer = mysqli_connect("localhost", "root", "", "mathpage");
+    if (mysqli_connect_errno())
+    {
+    echo "Något gick fel: " . mysql_connect_error();
+    }  ?>
 
 <h1 class="heading">Math ZONE</h1>
     <h1 class="mathname" > sixxside</h1>
@@ -322,43 +327,26 @@ body
 
 <div class="paragraph-math" style= "overflow-y: scroll; position: absolute;">
 
-        <?php
-        $mysql_pointer = mysqli_connect("localhost", "root", "", "mathpage");
-            if (mysqli_connect_errno())
-            {
-            echo "Något gick fel: " . mysql_connect_error();
-            }
+  <?php
+        $SQLMATH =  "SELECT texts FROM sections WHERE id = 1";
+        //conditions the upload
+        $resultat = mysqli_query($mysql_pointer, $SQLMATH);
+        while($rad = mysqli_fetch_array($resultat))
+              {
+              echo   $rad['texts'];
+              }
+    ?>
 
 
-
-            $SQL =  "SELECT texts FROM sections WHERE id = 1"
-      			         ;
-
-
-            //conditions the upload
-            $resultat = mysqli_query($mysql_pointer, $SQL);
-            while($rad = mysqli_fetch_array($resultat))
-                  {
-                  echo   $rad['texts'];
-                  }
-
-
-        ?>
 </div>
 
 <div class="paragraph-pretender" style= "overflow-y: scroll; position: absolute;">
 
     <?php
-    $mysql_pointer = mysqli_connect("localhost", "root", "", "mathpage");
-        if (mysqli_connect_errno())
-        {
-        echo "Något gick fel: " . mysql_connect_error();
-        }
-
-    $SQL =  'SELECT * FROM sections
+    $SQLPRETENDER =  'SELECT * FROM sections
               WHERE id = 15 ';
 
-    $resultat = mysqli_query($mysql_pointer, $SQL);
+    $resultat = mysqli_query($mysql_pointer, $SQLPRETENDER);
 
     while($rad = mysqli_fetch_array($resultat))
           {
@@ -372,16 +360,10 @@ body
 <div class="paragraph-garfield" style= "overflow-y: scroll; position: absolute;">
 
   <?php
-  $mysql_pointer = mysqli_connect("localhost", "root", "", "mathpage");
-      if (mysqli_connect_errno())
-      {
-      echo "Något gick fel: " . mysql_connect_error();
-      }
-
-  $SQL =  'SELECT * FROM sections
+  $SQLGARFIELD =  'SELECT * FROM sections
             WHERE id = 16 ';
 
-  $resultat = mysqli_query($mysql_pointer, $SQL);
+  $resultat = mysqli_query($mysql_pointer, $SQLGARFIELD);
 
   while($rad = mysqli_fetch_array($resultat))
         {
@@ -396,16 +378,11 @@ body
 <div class="paragraph-euroFag" style= "overflow-y: scroll; position: absolute;">
 
   <?php
-  $mysql_pointer = mysqli_connect("localhost", "root", "", "mathpage");
-      if (mysqli_connect_errno())
-      {
-      echo "Något gick fel: " . mysql_connect_error();
-      }
 
-  $SQL =  'SELECT * FROM sections
+  $SQLEUROFAG =  'SELECT * FROM sections
             WHERE id = 17 ';
 
-  $resultat = mysqli_query($mysql_pointer, $SQL);
+  $resultat = mysqli_query($mysql_pointer, $SQLEUROFAG);
 
   while($rad = mysqli_fetch_array($resultat))
         {
@@ -420,16 +397,11 @@ body
 <div class="paragraph-fluegs" style= "overflow-y: scroll; position: absolute;">
 
   <?php
-  $mysql_pointer = mysqli_connect("localhost", "root", "", "mathpage");
-      if (mysqli_connect_errno())
-      {
-      echo "Något gick fel: " . mysql_connect_error();
-      }
 
-  $SQL =  'SELECT * FROM sections
+  $SQLFLUEGS =  'SELECT * FROM sections
             WHERE id = 18 ';
 
-  $resultat = mysqli_query($mysql_pointer, $SQL);
+  $resultat = mysqli_query($mysql_pointer, $SQLFLUEGS);
 
   while($rad = mysqli_fetch_array($resultat))
         {
@@ -444,16 +416,11 @@ body
 <div class="paragraph-deceiver" style= "overflow-y: scroll; position: absolute;">
 
   <?php
-  $mysql_pointer = mysqli_connect("localhost", "root", "", "mathpage");
-      if (mysqli_connect_errno())
-      {
-      echo "Något gick fel: " . mysql_connect_error();
-      }
 
-  $SQL =  'SELECT * FROM sections
+  $SQLDECEIVER =  'SELECT * FROM sections
             WHERE id = 19 ';
 
-  $resultat = mysqli_query($mysql_pointer, $SQL);
+  $resultat = mysqli_query($mysql_pointer, $SQLDECEIVER);
 
   while($rad = mysqli_fetch_array($resultat))
         {
@@ -468,16 +435,11 @@ body
 <div class="paragraph-alpha" style= "overflow-y: scroll; position: absolute;">
 
   <?php
-  $mysql_pointer = mysqli_connect("localhost", "root", "", "mathpage");
-      if (mysqli_connect_errno())
-      {
-      echo "Något gick fel: " . mysql_connect_error();
-      }
 
-  $SQL =  'SELECT * FROM sections
+  $SQLALPHA =  'SELECT * FROM sections
             WHERE id = 20 ';
 
-  $resultat = mysqli_query($mysql_pointer, $SQL);
+  $resultat = mysqli_query($mysql_pointer, $SQLALPHA);
 
   while($rad = mysqli_fetch_array($resultat))
         {
@@ -492,16 +454,11 @@ body
 <div class="paragraph-highPitch" style= "overflow-y: scroll; position: absolute;">
 
   <?php
-  $mysql_pointer = mysqli_connect("localhost", "root", "", "mathpage");
-      if (mysqli_connect_errno())
-      {
-      echo "Något gick fel: " . mysql_connect_error();
-      }
 
-  $SQL =  'SELECT * FROM sections
+  $SQLHIGHPITCH =  'SELECT * FROM sections
             WHERE id = 21 ';
 
-  $resultat = mysqli_query($mysql_pointer, $SQL);
+  $resultat = mysqli_query($mysql_pointer, $SQLHIGHPITCH);
 
   while($rad = mysqli_fetch_array($resultat))
         {
