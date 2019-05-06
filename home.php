@@ -42,7 +42,9 @@ if (!isset($_SESSION['loggedin'])) {
 
       //gets table and row
 			$ID = $_SESSION['id'];
-      $SQL =  "SELECT texts FROM sections WHERE id = '$_SESSION[id]'"
+
+
+      $SQL =  "SELECT texts, textid FROM sections WHERE id = '$_SESSION[id]'ORDER BY textid DESC "
 			         ;
 
 			echo '<div class="my_class" style="height:200px; overflow-y: scroll;">';
@@ -51,12 +53,15 @@ if (!isset($_SESSION['loggedin'])) {
       while($rad = mysqli_fetch_array($resultat))
             {
             echo  $_SESSION['id'] . " " . $rad['texts'];
+						echo '<br>';
+						echo $rad['textid'];
+						echo '<hr><br>';
             }
 						echo '</div>';
 
-            if (isset($_GET['garfieldsbutton'])) {
-              $query="INSERT INTO sections(texts, id)
-                      VALUES('$_GET[garfieldstextarea]', $ID)";
+            if (isset($_POST['garfieldsbutton'])) {
+              $query="INSERT INTO sections(texts, id, dateofpost)
+                      VALUES('$_POST[garfieldstextarea]', $ID, CURRENT_TIMESTAMP)";
 
                         if(!mysqli_query($mysql_pointer,$query))
                         {
@@ -99,7 +104,7 @@ if (!isset($_SESSION['loggedin'])) {
           <div id="inputs">
 					<p>This is a HTML editor, not a text editor. But you can use it as a text editor.
 						**to make a linebreak, hold shift and press enter'</p>
-          <form id="inputs" action="home.php" method="GET">
+          <form id="inputs" action="home.php"  method="POST">
           <textarea type="text" name="garfieldstextarea" id="garfieldstextarea" style ="width : 200px; height : 200px">
           </textarea>
           <br>

@@ -1,0 +1,234 @@
+<style>
+
+
+  .maths {
+    height: 950px;
+    width: 1900px;
+    position: absolute;
+    top: 300px;
+    left: 50px;
+  }
+
+  .paragraph-math, .paragraph-pretender, .paragraph-garfield,
+  .paragraph-euroFag, .paragraph-fluegs, .paragraph-deceiver,
+  .paragraph-alpha, .paragraph-highPitch {
+    background-color: white;
+    height:400px;
+    width:400px;
+    position: absolute;
+  }
+
+  .paragraph-math {
+    left: 0px;
+  }
+
+  .paragraph-pretender
+  {
+    left: 450px;
+  }
+
+  .paragraph-garfield {
+    left: 900px;
+  }
+
+  .paragraph-euroFag {
+    left: 1350px;
+  }
+
+  .paragraph-fluegs{
+    top: 500px;
+  }
+
+  .paragraph-deceiver {
+    left: 450px;
+    top: 500px;
+  }
+
+  .paragraph-alpha {
+    left: 900px;
+    top: 500px;
+  }
+
+  .paragraph-highPitch {
+    left: 1350px;
+    top: 500px;
+  }
+
+  .heading{
+    position: absolute;
+    font-family: myFirstFonts;
+    color: white;
+    left:680px;
+    top: 50px;
+  }
+
+  .intro{
+    position: absolute;
+    right: 500px;
+    top: 280px;
+    color: white;
+  }
+
+  .mathname, .pretendername, .garfieldname, .eurofagname,.fluegsname,
+   .deceivername, .blackkidname, .highpitchname{
+    color: white;
+    position: absolute;
+  }
+
+  .mathname{
+    left: 50px;
+    top: 200px;
+  }
+
+  .pretendername{
+  left: 500px;
+  top: 200px;
+  }
+
+  .garfieldname{
+  left: 950px;
+  top: 200px;
+  }
+
+  .eurofagname{
+  left: 1400px;
+  top: 200px;
+  }
+
+  .fluegsname{
+  top: 720px;
+  left: 50px;
+  }
+
+  .deceivername{
+  top: 720px;
+  left: 500px;
+  }
+
+  .blackkidname{
+
+  top: 720px;
+  left: 950px;
+  }
+
+  .highpitchname{
+
+  top: 720px;
+  left: 1400px;
+  }
+
+  body
+  {
+    background-image: url(images/Untitled-1.jpg);
+
+  }
+  @font-face {
+     font-family: myFirstFonts;
+     src: url('images/SketchesByDuerer.ttf') format('truetype');
+  }
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+
+    body, html
+    {
+      background-image: url(images/Untitled-1.jpg);
+      background-repeat: repeat-y;
+      background-size: cover;
+
+    }
+
+
+    [class*="maths"] {
+      height: 950px;
+      width: 100%;
+      position: absolute;
+      top: 300px;
+      left: 0px;
+    }
+
+    [class*="heading"] {
+      left:0px;
+      top: 50px;
+      width: 10px;
+      position: absolute;
+    }
+
+    [class*="paragraph-math"] {
+      top: 0px;
+      left: 0px;
+      width: 100vw;
+    }
+
+    [class*="mathname"] {
+      top: 230px;
+    }
+    [class*="paragraph-pretender"] {
+      top: 480px;
+      left: 0px;
+      width: 100vw;
+    }
+    [class*="pretendername"] {
+      top: 720px;
+      left: 50px;
+
+    }
+    [class*="paragraph-garfield"] {
+      top: 960px;
+      left: 0px;
+      width: 100vw;
+    }
+    [class*="garfieldname"] {
+      top: 1210px;
+      left: 50px;
+
+    }
+    [class*="paragraph-euroFag"] {
+      top: 1440px;
+      left: 0px;
+      width: 100vw;
+    }
+
+    [class*="eurofagname"] {
+      top: 1700px;
+      left: 50px;
+    }
+    [class*="paragraph-fluegs"] {
+      top: 1920px;
+      left: 0px;
+      width: 100vw;
+    }
+    [class*="fluegsname"] {
+      top: 2150px;
+      left: 50px;
+    }
+    [class*="paragraph-deceiver"] {
+      top: 2400px;
+      left: 0px;
+      width: 100vw;
+    }
+    [class*="deceivername"] {
+      top: 2630px;
+      left: 50px;
+    }
+    [class*="paragraph-alpha"] {
+      top: 2880px;
+      left: 0px;
+      width: 100vw;
+    }
+    [class*="blackkidname"] {
+      top: 3110px;
+      left: 50px;
+    }
+    [class*="paragraph-highPitch"] {
+      top: 3360px;
+      left: 0px;
+      width: 100vw;
+
+    }
+    [class*="highpitchname"] {
+      top: 3590px;
+      left: 50px;
+    }
+  }
+
+</style>
